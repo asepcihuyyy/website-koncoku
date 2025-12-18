@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio Tyo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url('bgalam.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            z-index: -1;
+        }
+
+
+
+        /* CONTAINER */
+        .content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* FOTO */
+        .photo {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* JUDUL */
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+            margin-bottom: 20px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.7);
+            margin: 16px auto 28px;
+            border-radius: 2px;
+        }
+
+
+
+        /* BIODATA */
+        .bio {
+            margin-top: 30px;
+            margin-right: 50px;
+            margin-left: 50px;
+            text-align: justify;
+        }
+
+        .bio p {
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 600;
+            color: #f9fafb;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 14px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .bio span {
+            font-weight: bold;
+        }
+
+        .content {
+            animation: fadeUp 1s ease;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn-kembali {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+
+            padding: 10px 18px;
+            background: rgba(0, 0, 0, 0.45);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 25px;
+            backdrop-filter: blur(6px);
+
+            transition: all 0.3s ease;
+        }
+
+        .btn-kembali:hover {
+            background: rgba(0, 0, 0, 0.65);
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 600px) {
+            .btn-kembali {
+                top: 12px;
+                left: 12px;
+                font-size: 14px;
+                padding: 8px 14px;
+            }
+        }
+
+        .btn-kembali {
+            animation: slideIn 0.6s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+
+        <!-- FOTO -->
+        <div class="photo">
+            <img src="Logo.png" alt="Foto Teman">
+        </div>
+
+        <!-- NAMA -->
+        <h1>Prasetyo</h1>
+        <div class="divider"></div>
+
+
+        <div class="bio">
+            <p>🌱 Hidup bukan tentang siapa yang paling cepat, tapi siapa yang tetap berjalan. Jangan takut gagal,
+                karena dari gagal kita belajar jadi kuat. Bermimpi boleh tinggi, tapi jangan lupa tetap rendah hati.
+                Jalani hari ini dengan jujur, sisanya biar waktu yang jawab.</p>
+
+        </div>
+
+
+    </div>
+
+    <a href="index.html" class="btn-kembali">← Kembali</a>
+
+
+</body>
+
+</html>
