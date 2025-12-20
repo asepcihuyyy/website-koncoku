@@ -158,6 +158,46 @@
                 transform: translateX(0);
             }
         }
+
+         .photo {
+            animation: photoFade 1s ease forwards;
+        }
+
+        @keyframes photoFade {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .about {
+            margin: 40px 40px 0;
+            padding: 22px 26px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(6px);
+            border-radius: 18px;
+            animation: fadeUp 1.2s ease;
+        }
+
+        .about h2 {
+            color: #ffffff;
+            font-size: 22px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .about p {
+            color: #e5e7eb;
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: center;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+        }
     </style>
 </head>
 
@@ -167,7 +207,7 @@
 
         <!-- FOTO -->
         <div class="photo">
-            <img src="Logo.png" alt="Foto Teman">
+            <img src="fotoameng.jpeg" alt="Foto Teman">
         </div>
 
         <!-- NAMA -->
@@ -176,8 +216,16 @@
 
 
         <div class="bio">
-            <p>-</p>
+            <p>"Berdamai dengan kehidupan memang susah, tetapi jalani lah karna setiap langkah pasti ada kemudahan."</p>
 
+        </div>
+
+         <div class="about">
+            <h2>About Me</h2>
+            <p>
+                Seseorang yang belajar berdamai dengan kehidupan dan melangkah dengan sabar.
+Percaya bahwa di setiap langkah, selalu ada kemudahan.
+            </p>
         </div>
 
 
