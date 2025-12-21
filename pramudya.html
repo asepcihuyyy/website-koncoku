@@ -198,6 +198,69 @@
             text-align: center;
             text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
         }
+
+        /* BUTTON PESAN */
+        .pesan-wrapper {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        #btnPesan {
+            padding: 12px 26px;
+            border-radius: 25px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            color: white;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(6px);
+            transition: all 0.3s ease;
+        }
+
+        #btnPesan:hover {
+            background: rgba(255, 255, 255, 0.28);
+            transform: scale(1.05);
+        }
+
+        /* POPUP */
+        .popup {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .popup-box {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            padding: 26px;
+            border-radius: 20px;
+            max-width: 400px;
+            width: 90%;
+            color: white;
+            text-align: center;
+            animation: fadeUp 0.6s ease;
+            position: relative;
+        }
+
+        .popup-box p {
+            font-size: 16px;
+            line-height: 1.6;
+            min-height: 80px;
+        }
+
+        /* CLOSE */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            font-size: 22px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -230,10 +293,58 @@
             </p>
         </div>
 
+        <!-- BUTTON PESAN -->
+        <div class="pesan-wrapper">
+            <button id="btnPesan">💬 Pesan</button>
+        </div>
+
+        <!-- POPUP PESAN -->
+        <div class="popup" id="popupPesan">
+            <div class="popup-box">
+                <span class="close" id="closePopup">&times;</span>
+                <p id="typingText"></p>
+            </div>
+        </div>
+
     </div>
 
     <a href="index.html" class="btn-kembali">← Kembali</a>
 
+    <script>
+        const btnPesan = document.getElementById("btnPesan");
+        const popup = document.getElementById("popupPesan");
+        const closePopup = document.getElementById("closePopup");
+        const typingText = document.getElementById("typingText");
+
+        const pesan = "Tetaplah menjadi diri sendiri, Jangan takut berjalan pelan, karena setiap langkah kecil tetap membawa kita maju.";
+
+        let index = 0;
+
+        function typeEffect() {
+            if (index < pesan.length) {
+                typingText.innerHTML += pesan.charAt(index);
+                index++;
+                setTimeout(typeEffect, 40);
+            }
+        }
+
+        btnPesan.onclick = () => {
+            popup.style.display = "flex";
+            typingText.innerHTML = "";
+            index = 0;
+            typeEffect();
+        };
+
+        closePopup.onclick = () => {
+            popup.style.display = "none";
+        };
+
+        window.onclick = (e) => {
+            if (e.target === popup) {
+                popup.style.display = "none";
+            }
+        };
+    </script>
 
 </body>
 
